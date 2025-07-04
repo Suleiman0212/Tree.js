@@ -1,6 +1,12 @@
+import './cube.css'
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
-import { Camera, Engine, Graphics, Scene, Input } from './index.js';
+import { Camera, Engine, Graphics, Scene, Input } from '../index.js';
 import * as THREE from 'three';
+
+// Adding label
+const info = document.createElement('div')
+info.id = 'info';
+document.body.appendChild(info);
 
 // Initialize default engine features:
 // Graphics, Audio, Input, UI and etc.
@@ -28,11 +34,14 @@ Scene().add(cube);
 // Game loop
 // In most cases 60 times per second
 Engine.run(() => {
-  cube.rotation.z += 0.01;
 
   // Keyboard input
   if (Input.isKeyDown('Space')) {
-    cube.rotation.z -= 0.1;
+    info.textContent = 'ZA WARUDO!';
+  } else {
+    info.textContent = 'Press space to stop!';
+    cube.rotation.z += 0.01;
+    cube.rotation.x += 0.01;
   }
 
   // Update contols, when moving camera
