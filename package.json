@@ -1,5 +1,5 @@
 {
-  "name": "framework",
+  "name": "tree",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
