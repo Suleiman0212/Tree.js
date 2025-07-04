@@ -1,6 +1,6 @@
 // vite.config.js
 export default {
-  root: '.',
+  root: './src/',
   build: {
     outDir: 'dist',
   },
